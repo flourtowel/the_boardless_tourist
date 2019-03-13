@@ -26,7 +26,11 @@ def get_traveler_location(traveler):
 #Empty list of lists using list comprehesion on the list destinations
 attractions = [[] for destination in destinations]
 
+#Function takes in a destination and attraction it coverts the destination to an index of the list
+#destinations. Then it adds the attraction in the form (location,[attraction, [category]]) to the
+#attractions list
 def add_attraction(destination, attraction):
+	#TODO: We are ignoring the case where the passed destination isn't in the destinatino list
 	try:
 		destination_index = get_destination_index(destination)
 	except ValueError:
@@ -36,6 +40,7 @@ def add_attraction(destination, attraction):
 	attractions_for_destination.append(attraction)
 	return
 
+#Adding attractions or the attractions list using the add_attraction function 
 add_attraction('Los Angeles, USA', ['Venic Beach', ['beach']])
 add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
 add_attraction("Paris, France", ["Arc de Triomphe", ["historical site", "monument"]])
