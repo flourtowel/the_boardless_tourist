@@ -53,6 +53,7 @@ add_attraction("Sao Paulo, Brazil", ["Patio do Colegio", ["historical site"]])
 add_attraction("Cairo, Egypt", ["Pyramids of Giza", ["monument", "historical site"]])
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 
+#Function takes in destination and interests and finds attractions in the same location
 def find_attractions(destination, interests):
   destination_index = get_destination_index(destination)
   attractions_in_city = attractions[destination_index]
@@ -67,6 +68,7 @@ def find_attractions(destination, interests):
         attractions_with_interest.append(possible_attraction[0])
   return attractions_with_interest
 
+#Function takes a traveler's location and interests and finds them things to do
 def get_attractions_for_traveler(traveler):
   traveler_destination = traveler[1]
   traveler_interests = traveler[2]
